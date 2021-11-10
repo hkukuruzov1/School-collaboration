@@ -1,17 +1,52 @@
 @media screen and (min-width: 800px) {
-.meni{
+#meni{
+    width: 100%;
 }
-.grupe{
-    flex-direction: row;
+#grupe{
+    float: left;
+    width: 35%;
 }
-.studenti{
-    flex-direction: row;
+#studenti{
+    float: left;
+    width: 65%;
+}
+.column{
+    flex-direction: column;
 }
 }
 @media screen and (min-width: 500px){
+    #meni{
         flex-direction: column;
+    }
+    #grupe{
+        flex-direction: column;
+    }
+    #studenti{
+        flex-direction: column;
+    }
    
 }
-@media screen and (max-width: 499px){
-flex-direction: column;
+@media screen and (max-width: 501px){
+    #meni{
+        flex-direction: column;
+    }
+    #grupe{
+        flex-direction: column;
+    }
+    #studenti{
+        flex-direction: column;
+    }
+        #grupe th:nth-of-type(n+2) {  
+            display:none;
+          }
+          #grupe td:nth-of-type(n+2) {  
+            display:none;
+          }
+          .column{
+            flex-direction: column;
+          }
+    
 }
+  .column{
+      padding: 20px;
+  }
