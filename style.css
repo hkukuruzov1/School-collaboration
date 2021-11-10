@@ -1,0 +1,17 @@
+@media screen and (min-width: 800px) {
+.meni{
+}
+.grupe{
+    flex-direction: row;
+}
+.studenti{
+    flex-direction: row;
+}
+}
+@media screen and (min-width: 500px){
+        flex-direction: column;
+   
+}
+@media screen and (max-width: 499px){
+flex-direction: column;
+}
