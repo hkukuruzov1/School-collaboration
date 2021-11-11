@@ -1,0 +1,57 @@
+@media screen and (min-width: 800px) {
+    #odabirVjezbe{
+        float: left;
+        text-align: center;
+        width: 40%;
+    }
+    .graf{
+        float: right;
+        width: 60%;
+    }
+    .row{
+        display: flex;
+        flex-direction: row;
+    }
+    .column{
+        display: flex;
+        flex-direction: column;
+    }
+    }
+    @media screen and (max-width: 799px){
+        #meni{
+            display: flex;
+            flex-direction: column;
+    
+        }
+        .graf{
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            float: right;
+        }
+        #odabirVjezbe{
+            float: left;
+            text-align: center;
+            width: 40%;
+        }
+       
+    }
+    img{
+        width: 40%;
+    }
+    p{
+        padding: 10px;
+        background-color: #B565A7;
+        color: white;
+    }
+    p1{
+        margin: 5px;
+        background-color: #B565A7;
+        color:white;
+    }
+    body{
+        background-color: #34568B;
+    }
+    a{
+        color: white;
+    }

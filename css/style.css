@@ -1,0 +1,60 @@
+@media screen and (min-width: 800px) {
+    #meni{
+        margin-bottom: 81px;
+        width: 100%;
+    }
+    #grupe{
+        float: right;
+        width: 40%;
+    }
+    #studenti{
+        float: left;
+        width: 60%;
+    }
+    .row{
+        display: flex;
+        flex-direction: row;
+    }
+    .column{
+        display: flex;
+        flex-direction: column;
+    }
+    }
+    @media screen and (min-width: 500px){
+        #meni{
+            flex-direction: column;
+        }
+        #grupe{
+            flex-direction: column;
+        }
+        #studenti{
+            flex-direction: column;
+        }
+       
+    }
+    @media screen and (max-width: 499px){
+        #meni{
+            display:flex;
+            flex-direction: column;
+        }
+        #grupe{
+            flex-direction: column;
+        }
+        #studenti{
+            flex-direction: column;
+        }
+            #grupe th:nth-of-type(n+2) {  
+                display:none;
+              }
+              #grupe td:nth-of-type(n+2) {  
+                display:none;
+              }
+              .column{
+                flex-direction: column;
+              }
+        
+    }
+      .column{
+          padding: 20px;
+      }
+    
