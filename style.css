@@ -10,8 +10,9 @@
     float: left;
     width: 65%;
 }
-.column{
-    flex-direction: column;
+.row{
+    display: flex;
+    flex-direction: row;
 }
 }
 @media screen and (min-width: 500px){
@@ -26,8 +27,9 @@
     }
    
 }
-@media screen and (max-width: 501px){
+@media screen and (max-width: 499px){
     #meni{
+        display:flex;
         flex-direction: column;
     }
     #grupe{
