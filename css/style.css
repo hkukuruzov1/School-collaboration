@@ -1,47 +1,73 @@
-@media screen and (min-width: 800px) {
-    #meni{
-        margin-bottom: 81px;
-        width: 100%;
+#meni{
+    background-color: #B565A7;
+    grid-area: meni;
+}
+#studenti{
+    grid-area: studenti;
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+}
+#grupe{
+    grid-area: grupe;
+}
+#jedan{
+    outline-style: groove;
+    outline-color: white;
+    text-align: center;
+}
+a{
+    color: white;
+}
+@media screen and (min-width: 800px){
+    body{
+        background-color: #34568B;
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1.2fr;
+        grid-template-rows: 0.25fr 2fr 2fr;
+        grid-template-areas: "meni meni meni meni meni meni meni meni meni"
+        "studenti studenti studenti studenti studenti studenti studenti studenti grupe"
+        "studenti studenti studenti studenti studenti studenti studenti studenti grupe";
+        color: white;
+        grid-gap: 20px;
+
     }
-    #grupe{
-        float: right;
-        width: 40%;
-    }
-    #studenti{
-        float: left;
-        width: 60%;
-    }
-    .row{
+    #red{
         display: flex;
         flex-direction: row;
+        gap: 10px;
     }
-    .column{
-        display: flex;
-        flex-direction: column;
+}
+@media screen and (max-width: 799px){
+    body{
+        background-color: #34568B;
+        display: grid;
+        height: 100vh;
+        grid-template-columns: 5fr;
+        grid-template-rows: 0.5fr 3fr 3fr;
+        grid-template-areas: "meni"
+        "studenti"
+        "grupe";
+        color: white;
+        grid-gap: 20px;
     }
-    }
-    @media screen and (min-width: 500px){
-        #meni{
-            flex-direction: column;
-        }
-        #grupe{
-            flex-direction: column;
-        }
-        #studenti{
-            flex-direction: column;
-        }
-       
+       #red{
+           gap: 10px;
+       }
     }
     @media screen and (max-width: 499px){
-        #meni{
-            display:flex;
-            flex-direction: column;
-        }
-        #grupe{
-            flex-direction: column;
-        }
-        #studenti{
-            flex-direction: column;
+        body{
+            background-color: #34568B;
+            display: grid;
+            height: 100vh;
+            grid-template-columns: 5fr;
+            grid-template-rows: 5fr;
+            grid-template-areas: "meni"
+            "studenti"
+            "grupe";
+            color: white;
+            grid-gap: 20px;
         }
             #grupe th:nth-of-type(n+2) {  
                 display:none;
@@ -49,12 +75,11 @@
               #grupe td:nth-of-type(n+2) {  
                 display:none;
               }
-              .column{
-                flex-direction: column;
-              }
-        
+        #meni{
+            display: flex;
+            flex-direction: column;
+        }
+        #red{
+            gap: 10px;
+        }
     }
-      .column{
-          padding: 20px;
-      }
-    
