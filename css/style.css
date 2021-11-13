@@ -42,6 +42,9 @@ a{
     }
 }
 @media screen and (max-width: 799px){
+    #studenti{
+        width:100%;
+    }
     body{
         background-color: #34568B;
         display: grid;
@@ -49,8 +52,8 @@ a{
         grid-template-columns: 5fr;
         grid-template-rows: 0.5fr 3fr 3fr;
         grid-template-areas: "meni"
-        "studenti"
-        "grupe";
+        "grupe"
+        "studenti";
         color: white;
         grid-gap: 20px;
     }
@@ -59,15 +62,18 @@ a{
        }
     }
     @media screen and (max-width: 499px){
+        #studenti{
+            width:100%;
+        }
         body{
             background-color: #34568B;
             display: grid;
             height: 100vh;
-            grid-template-columns: 5fr;
+            grid-template-columns: 6fr;
             grid-template-rows: 5fr;
             grid-template-areas: "meni"
-            "studenti"
-            "grupe";
+            "grupe"
+            "studenti";
             color: white;
             grid-gap: 20px;
         }
