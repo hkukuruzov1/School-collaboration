@@ -2,7 +2,7 @@
     #odabirVjezbe{
         float: left;
         text-align: center;
-        width: 40%;
+        width: 35%;
     }
     .graf{
         float: right;
@@ -27,17 +27,17 @@
             display: flex;
             flex-direction: column;
             width: 60%;
-            float: right;
+           
         }
         #odabirVjezbe{
-            float: left;
+           
             text-align: center;
             width: 40%;
         }
        
     }
     img{
-        width: 40%;
+        width: 400px;
     }
     p{
         padding: 10px;
