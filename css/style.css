@@ -7,9 +7,12 @@
     display: flex;
     flex-direction: column;
     row-gap: 20px;
+    margin-top: 62px;
+    width: 78%;
 }
 #grupe{
     grid-area: grupe;
+min-width: 390px;
 }
 #jedan{
     outline-style: groove;
@@ -24,11 +27,10 @@ a{
         background-color: #34568B;
         display: grid;
         height: 100vh;
-        grid-template-columns: 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 0.5fr 1.2fr;
-        grid-template-rows: 0.25fr 2fr 2fr;
-        grid-template-areas: "meni meni meni meni meni meni meni meni meni"
-        "studenti studenti studenti studenti studenti studenti studenti studenti grupe"
-        "studenti studenti studenti studenti studenti studenti studenti studenti grupe";
+        grid-template-columns: 3fr 2fr;
+        grid-template-rows: 0.25fr 5fr;
+        grid-template-areas: "meni meni"
+        "studenti  grupe";
         color: white;
         grid-gap: 20px;
 
