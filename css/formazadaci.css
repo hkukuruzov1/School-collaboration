@@ -31,3 +31,7 @@ button {
   body{
     background-color: #FFC0CB;
   }
+  #meni{
+    background-color: white;
+    height: 30px;
+  }
