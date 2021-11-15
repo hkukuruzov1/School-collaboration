@@ -1,7 +1,3 @@
-#meni{
-    background-color: #B565A7;
-    grid-area: meni;
-}
 #studenti{
     grid-area: studenti;
     display: flex;
@@ -23,6 +19,11 @@ a{
     color: white;
 }
 @media screen and (min-width: 800px){
+    #meni{
+        background-color: #B565A7;
+        grid-area: meni;
+        width: 85%;
+    }
     body{
         background-color: #34568B;
         display: grid;
@@ -86,6 +87,8 @@ a{
         #meni{
             display: flex;
             flex-direction: column;
+            background-color: #B565A7;
+            grid-area: meni;
         }
         #red{
             gap: 10px;
