@@ -1,6 +1,13 @@
 let TestoviParser = (function () {
     const dajTacnost = function (x) {
-        const myObj = JSON.parse(x);
+        let myObj;
+        try{
+          JSON.parse(x);
+        }
+        catch(e){
+            return JSON.parse('{"tacnost":"0%","greske":["Testovi se ne mogu izvršiti"]}');
+        }
+        myObj =JSON.parse(x);
         let statistika=myObj.stats;
         let uspjesni=statistika.passes;
         let pali=statistika.failures;
@@ -12,7 +19,8 @@ let TestoviParser = (function () {
                 longstring+='"';
                 longstring=longstring+testovi[i].fullTitle;
                 longstring+='"';
-                /*longstring+=', */
+                if(i!=pali-1)
+                longstring+=", ";
             }
             longstring=longstring+']';
             longstring+='}';
