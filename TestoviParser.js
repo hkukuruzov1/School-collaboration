@@ -32,8 +32,15 @@ let TestoviParser = (function () {
         }
     }
     const porediRezultate=function(rezultat1,rezultat2){
-        let obj1=JSON.parse(rezultat1);
-        let obj2=JSON.parse(rezultat2);
+        let obj1;
+        let obj2;
+        try{
+         obj1=JSON.parse(rezultat1);
+        obj2=JSON.parse(rezultat2);
+        }
+        catch(e){
+            return JSON.parse('{"promjena":"0%","greske":["Testovi se ne mogu izvršiti"]}');
+        }
         let brTest1=obj1.stats.tests;
         let brTest2=obj2.stats.tests;
         let testovi1=obj1.tests;
@@ -76,6 +83,12 @@ let TestoviParser = (function () {
                                 trazeniNiz[index]=s[i];
                                 index++;
                             }
+                    }
+                }
+                if(brTest2==0){
+                    for(let i=0; i<obj1.stats.failures;i++){
+                        trazeniNiz[index]=s[i];
+                                index++;
                     }
                 }
                 let x=(trazeniNiz.length+obj2.stats.failures)/(trazeniNiz.length+brTest2)*100;
