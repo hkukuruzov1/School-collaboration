@@ -61,10 +61,11 @@ trebali++;
 }
 if(trebali!=0)
 stringeroni+='"}';
+console.log(stringeroni)
 if(trebali==0)
 res.status(200).json({"brojVjezbi":br, "brojZadataka":niz});
 else
-res.status(200).json(JSON.parse(stringeroni));
+res.status(400).json(JSON.parse(stringeroni));
   })
 
 app.listen(3000, () => console.log(`Server listening on port:3000`));
