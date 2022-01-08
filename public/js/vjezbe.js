@@ -1,5 +1,4 @@
  function usao(){
- console.log("uso")
     VjezbeAjax.dohvatiPodatke((err,data)=>
     {
         if(err==null)

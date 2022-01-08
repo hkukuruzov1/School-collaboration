@@ -47,7 +47,7 @@ const iscrtajVjezbe=function(divDOMelement,objekat){
 for(let i=1;i<=objekat.brojVjezbi;i++){
     let x=document.createElement("button")
     x.setAttribute("id","v"+i);
-    x.appendChild(document.createTextNode("VJEŽBA "+i))
+    x.appendChild(document.createTextNode("VJEŽBA "+i+" "))
     x.setAttribute("value",objekat.brojZadataka[i-1])
     x.setAttribute("class","dugme")
     var f=document.getElementById("v"+i)

@@ -56,6 +56,10 @@
         color: white;
     }
     .dugme{
+        vertical-align: text-top;
         width: 350px;
-        height: 100px;
+        height: 160px;
+    }
+    .tekstic{
+        text-align: right;
     }
