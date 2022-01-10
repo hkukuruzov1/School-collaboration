@@ -9,7 +9,10 @@ function saljiPostaru(){
         stringeroni+=',"brojZadataka":[';
         let string='[';
         for(let i=0;i<document.getElementById("brojZadataka").value;i++){
-            console.log(i);
+            console.log(document.getElementById("z"+i).value);
+            if(document.getElementById("z"+i).value=="")
+            string+="123.45";
+            else
             string+=document.getElementById("z"+i).value;
             if(i!=document.getElementById("brojZadataka").value-1)
             string+=",";

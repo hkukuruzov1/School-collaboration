@@ -97,6 +97,7 @@ const iscrtajZadatke=function(vjezbaDOMelement,brojZadataka){
     for(let i=0;i<vjezbaDOMelement.value;i++){
         let x=document.createElement("button")
         x.appendChild(document.createTextNode("ZADATAK "+(i)))
+        x.setAttribute("class","dugmici")
     /*vjezbaDOMelement.parentNode.insertBefore(x, vjezbaDOMelement.nextSibling);*/
     /*x.style.display="inline-block"*/
         vjezbaDOMelement.appendChild(x)

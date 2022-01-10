@@ -43,8 +43,19 @@ app.get('/vjezbe', function (req, res) {
     let brojac=0;
     if(greske!=0 && (br<1 || br>15))
     stringeroni+=','
+    let indikator=0;
     for(let i=0;i<niz.length;i++){
-        if((niz[i]<0 || niz[i]>10) && brojac!=greske-1){
+        if(niz[i]==123.45 && brojac!=greske-1){
+            stringeroni+='z'+i+',';
+        indikator++;
+        brojac++;
+    }   
+    else if(niz[i]==123.45){
+        stringeroni+='z'+i;
+        indikator++;
+        brojac++;
+    }
+        else if((niz[i]<0 || niz[i]>10 || niz[i]==null) && brojac!=greske-1){
             stringeroni+='z'+i+',';
             brojac++;
         }
@@ -53,9 +64,9 @@ app.get('/vjezbe', function (req, res) {
             brojac++;
         }
 }
-if(br!=niz.length && trebali!=0)
+if(trebali!=0 && niz.length!=0 && indikator!=0)
 stringeroni+=',brojZadataka';
-else if(br!=niz.length){
+else if( niz.length!=0 && indikator!=0){
 stringeroni+='brojZadataka';
 trebali++;
 }

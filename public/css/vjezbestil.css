@@ -59,7 +59,13 @@
         vertical-align: text-top;
         width: 350px;
         height: 160px;
+        border-radius: 8px;
+        background-color: #80B3EA;
     }
     .tekstic{
         text-align: right;
+    }
+    .dugmici{
+        background-color: #09F3F5;
+        border-radius: 8px;
     }
