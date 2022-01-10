@@ -3,11 +3,15 @@ const bodyParser = require('body-parser');
 const fs = require('fs');
 const app = express();
 var path = require('path');
+const exp = require('constants');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(express.static('public/html'));
+/*app.use(express.static('node_modules/sinon/pkg'));
+app.use(express.static('node_modules/chai'))
+app.use(express.static('node_modules/mocha'))*/
 
 app.get('/vjezbe', function (req, res) {
     var data=fs.readFileSync('vjezbe.csv','utf8');

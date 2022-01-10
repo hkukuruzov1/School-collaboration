@@ -21,8 +21,8 @@ function saljiPostaru(){
         console.log(string);
         VjezbeAjax.posaljiPodatke({"brojVjezbi":pomoc,"brojZadataka":JSON.parse(string)},(er,dat) =>{
             if(er==null)
-            console.log("Uspješno poslani podaci!")
+            console.log("Podaci su ispravni!")
             else
-            console.log("Neuspješno poslani podaci")
+            console.log("Podaci su neispravni!")
         });
 }
