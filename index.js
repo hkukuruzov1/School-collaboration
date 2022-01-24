@@ -10,6 +10,7 @@ const { use } = require('chai');
 
 
 app.use(bodyParser.json());
+app.use(bodyParser.text());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
 app.use(express.static('public/html'));
@@ -157,5 +158,48 @@ app.put('/student/:index', function (req, res) {
         }
     })
 })
+app.post('/batch/student', function (req, res) {
+    console.log(req.body)
+ let poNovomRedu=req.body.split("\r\n");
+ console.log(poNovomRedu);
+ let nizStudenata=[];
+ let studentiPromise=[];
+ let tuSu=[];
+ let n=0;
+ poNovomRedu.forEach(x => {
+     if(x!=""){
+    let argsStudenta = x.split(',');
+    studentiPromise.push(db.student.findOne({where: {index:argsStudenta[2]}}))
+    nizStudenata.push(x);
+     }
+});
+Promise.all(studentiPromise).then(function(studenti) {
+    let studenteZaDodati = []
+    for (var i =  0; i < nizStudenata.length; i++) {
+        let data = nizStudenata[i].split(',')
+        if(studenti[i] == null) {
+            studenteZaDodati.push(db.student.create({ime: data[0], prezime: data[1], index:data[2], grupa:data[3]}))
+            n++;
+        }
+        else
+            tuSu.push(data[2])
+    }
+    Promise.all(studenteZaDodati).then(function(s){
+        let grupePromise = []
+        s.forEach(st => {
+            grupePromise.push(db.grupa.findOrCreate({where: {naziv: st.grupa}}))
+        })
+        Promise.all(grupePromise).then(function(){
+            if(tuSu.length > 0) {
+            res.json({ status: "Dodano "+n+" studenata, a studenti "+tuSu.join(',')+" već postoje"})
+            }
+            else
+             res.json({status: "Dodano " + n+ " studenata!"})
+        }
+        )
+    })
+})
 
+
+})
 app.listen(3000, () => console.log(`Server listening on port:3000`));
