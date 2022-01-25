@@ -159,9 +159,9 @@ app.put('/student/:index', function (req, res) {
     })
 })
 app.post('/batch/student', function (req, res) {
-    console.log(req.body)
+    
  let poNovomRedu=req.body.split("\r\n");
- console.log(poNovomRedu);
+
  let nizStudenata=[];
  let studentiPromise=[];
  let tuSu=[];

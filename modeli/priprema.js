@@ -9,6 +9,7 @@ function fillUp(){
   return new Promise(function(resolve,reject){
     studentiListaPromisea.push(db.student.create({ime:'Haris',prezime:'Kukuruzović',index:'18703',grupa:'G1'}));
     studentiListaPromisea.push(db.student.create({ime:'Hamza',prezime:'Kukuruzović',index:'18743',grupa:'G1'}));
+    db.grupa.create({naziv:'G1'});
     VjezbaListaPromiesa.push(db.vjezba.create({naziv:'z0'}));
     VjezbaListaPromiesa.push(db.vjezba.create({naziv:'z1'}));
     VjezbaListaPromiesa.push(db.vjezba.create({naziv:'z2'}));
