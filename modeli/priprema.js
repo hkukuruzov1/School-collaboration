@@ -17,7 +17,7 @@ function fillUp(){
       var pavlija=knjige.filter(function(k){return k.naziv==='z0'})[0];
       ZadaciListaPromiesa.push(
         db.zadatak.create({naziv:'Zadatak1'}).then(function(b){
-          console.log(b);
+
             return pavlija.setVjezbaId(b).then(function(){
             return new Promise(function(resolve,reject){resolve(b);});
             });
@@ -25,7 +25,6 @@ function fillUp(){
     );
     ZadaciListaPromiesa.push(
       db.zadatak.create({naziv:'Zadatak2'}).then(function(b){
-        console.log(b);
           return pavlija.setVjezbaId(b).then(function(){
           return new Promise(function(resolve,reject){resolve(b);});
           });
