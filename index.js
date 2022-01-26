@@ -135,7 +135,7 @@ app.put('/student/:index', function (req, res) {
     var provjera=true;
     db.student.findOne({where:{index:indexica}}).then((x)=>{
         if(x==null){
-            let stringerica="Student sa indexom "+indexica+" ne postoji!";
+            let stringerica="Student sa indexom "+indexica+" ne postoji";
             provjera=false;
             res.status(400).json({"status":stringerica});
         }
@@ -161,7 +161,6 @@ app.put('/student/:index', function (req, res) {
 app.post('/batch/student', function (req, res) {
     
  let poNovomRedu=req.body.split("\r\n");
-
  let nizStudenata=[];
  let studentiPromise=[];
  let tuSu=[];
@@ -191,7 +190,7 @@ Promise.all(studentiPromise).then(function(studenti) {
         })
         Promise.all(grupePromise).then(function(){
             if(tuSu.length > 0) {
-            res.json({ status: "Dodano "+n+" studenata, a studenti "+tuSu.join(',')+" već postoje"})
+            res.json({ status: "Dodano "+n+" studenata, a studenti "+tuSu.join(',')+" već postoje!"})
             }
             else
              res.json({status: "Dodano " + n+ " studenata!"})
@@ -203,3 +202,4 @@ Promise.all(studentiPromise).then(function(studenti) {
 
 })
 app.listen(3000, () => console.log(`Server listening on port:3000`));
+module.exports=app
